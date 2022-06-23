@@ -22,3 +22,8 @@
 <hr>
 
 → Using n-Gram analysis, we can use it to analyze if country X and Country Y used different verbs about the given Event.
+
+
+
+#### TODOs:
+→ Link Prediction

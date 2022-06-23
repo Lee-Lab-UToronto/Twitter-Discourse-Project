@@ -26,4 +26,4 @@
 
 
 #### TODOs:
-→ Link Prediction
+→ Link Prediction https://sci-hub.mksa.top/10.1016/j.jnca.2020.102716

@@ -7,7 +7,7 @@
 
 → **How?** 
 
-<img src="https://user-images.githubusercontent.com/42632417/172034443-dd67ab1d-3a01-4246-8160-79194f1fe635.png" height = 500 width = 900></img>
+<img src="https://user-images.githubusercontent.com/42632417/175763432-59aa627c-5792-4bc2-96ac-7c66984c81ef.png" height = 500 width = 900></img>
 
 
 <!-- - Topic Modeling -> 20 topics 20 words analysis -> Main tweet vs. Replies

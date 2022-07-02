@@ -31,3 +31,41 @@
 → Regression Analysis
 
 → Kullback Leibler Divergence
+
+
+**Text Cleaning**
+```
+
+def preprocessing_text(text):
+    #put everythin in lowercase
+    text = text.lower()
+    text = ' '.join([word for word in text.split(" ") if word not in remove_token])
+    text = ' '.join([word for word in text.split(" ") if word not in stop_words_custom])
+    text = ' '.join([word for word in text.split(" ") if detect_language(word) != 'Spanish'])
+    text = ' '.join([word for word in text.split(" ") if word not in string.punctuation])
+    text = ' '.join([contractions.fix(word) for word in text.split(" ")])
+    text = ' '.join([w for w in text.split(" ") if w in words_list or not w.isalpha()])
+    #Fix contractions
+    text = pattern.sub('', text)
+    # #Replace rt indicating that was a retweet
+    clean_text = text.replace('rt', '')
+    # # #Replace occurences of mentioning @UserNames
+    clean_text = re.sub("@[A-Za-z0-9_]+", "", clean_text)
+    # # #Replace links contained in the tweet
+    clean_text = re.sub('http\S+', ' ', clean_text)
+    clean_text = re.sub('www.[^ ]+', ' ', clean_text)
+    # # #remove numbers
+    clean_text = re.sub('[0-9]+', ' ', clean_text)
+     # #remove emojis
+    clean_text = emoji.get_emoji_regexp().sub(u'', clean_text)
+    # # remove hastags fix again
+    clean_text = re.sub("#[A-Za-z0-9_]+","", clean_text)
+    # remove all punctuation except words and space
+    clean_text = re.sub(r'[^\w\s]','', clean_text)
+    # # #replace special characters and puntuation marks
+    clean_text = re.sub('[!"#$%&()*+,-./:;<=>?@[\]^_`{|}~’]', '', clean_text)
+    # #join to remove extra space
+    clean_text = ' '.join(clean_text.split())
+    return clean_text
+
+```
